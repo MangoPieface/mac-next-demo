@@ -32,7 +32,7 @@ const Home = () => {
               <p className='col-span-2'>{title}</p>
               {
                 links.map(link => (
-                  <Link href={link}>
+                  <Link href={link} legacyBehavior>
                     <a className='text-blue-600 uppercase'>
                       {link}
                     </a>
