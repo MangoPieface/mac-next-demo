@@ -17,6 +17,9 @@ export default async function handler(
     res: NextApiResponse<Data>
 ) {
     const catRequest = await fetch('https://catfact.ninja/breeds?limit=1')
-    const { data } = await catRequest.json() as {data:Data}
+    //const a = catRequest.json();
+  //  console.log('ff ' + a);
+    
+    const { data } =  await catRequest.json() as {data:Data}
     res.status(200).send({ ...data })
 }
