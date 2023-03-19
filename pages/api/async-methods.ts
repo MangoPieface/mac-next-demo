@@ -16,10 +16,19 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<Data>
 ) {
-    const catRequest = await fetch('https://catfact.ninja/breeds?limit=1')
-    //const a = catRequest.json();
-  //  console.log('ff ' + a);
+    async function randomCatRequest() {
+        var page = 1;
+        if (Math.random() > 0.5) {
+            page = 2;
+        }
+        const catRequest = await fetch(`https://catfact.ninja/breeds?page=${page}&limit=1`);
+        return catRequest;
+    }
+    
+    const catRequest = await randomCatRequest();
     
     const { data } =  await catRequest.json() as {data:Data}
     res.status(200).send({ ...data })
+
+
 }

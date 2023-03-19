@@ -23,8 +23,14 @@ export default SSRPageExample;
 
 
 export async function getStaticProps() {
-//    const request = await fetch('http://localhost:3000/api/async-methods')
-    const catRequest = await fetch('https://catfact.ninja/breeds?page=2&limit=1')
+
+
+var page = 1;
+if (Math.random() > 0.5) {
+    page = 2;
+}
+const catRequest = await fetch(`https://catfact.ninja/breeds?page=${page}&limit=1`);
+   
     const { data } = await catRequest.json();
     return {
         props: { data },
