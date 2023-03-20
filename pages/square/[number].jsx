@@ -17,7 +17,7 @@ export default Counter
 export async function getServerSideProps(context) {
     const { number } = context.query;
     // Fetch data from external API
-    const res = await fetch(`http://localhost:3000/api/simple-squaring`, {
+    const res = await fetch(`${process.env.HOST}/api/simple-squaring`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

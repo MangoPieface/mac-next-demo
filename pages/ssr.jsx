@@ -22,7 +22,7 @@ const SSRPageExample = ({ data }) => {
 export default SSRPageExample
 
 export async function getServerSideProps() {
-    console.log(`${process.env.HOST}/api/async-methods`);
+
     const request = await fetch(`${process.env.HOST}/api/async-methods`)
     const data = await request.json()
     return {
