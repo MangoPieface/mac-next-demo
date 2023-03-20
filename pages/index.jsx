@@ -7,7 +7,8 @@ const sections = [
     links: [
       "/traditional-react",
       "/ssr",
-      "/static"
+      "/static",
+      "/isr"
     ],
   }
   ,

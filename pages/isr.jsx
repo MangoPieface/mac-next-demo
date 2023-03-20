@@ -54,7 +54,7 @@ export async function getStaticProps() {
     props: {
       reactions,
     },
-    revalidate: 20,
+    revalidate: 10,
   };
 }
 
@@ -71,7 +71,7 @@ const ISRPageExample = ({ reactions }) => {
         <h3>
           Reactions on{' '}
           <a href="https://github.com/MangoPieface/mac-next-demo/issues/1">
-            this GitHub issue
+            https://github.com/MangoPieface/mac-next-demo/issues/1
           </a>
           :
         </h3>
