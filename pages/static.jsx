@@ -25,10 +25,8 @@ export default SSRPageExample;
 export async function getStaticProps() {
 
 
-var page = 1;
-if (Math.random() > 0.5) {
-    page = 2;
-}
+var page = Math.round(Math.random() * 10);
+
 const catRequest = await fetch(`https://catfact.ninja/breeds?page=${page}&limit=1`);
    
     const { data } = await catRequest.json();
